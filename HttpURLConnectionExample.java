@@ -30,7 +30,7 @@ public class HttpURLConnectionExample {
 	private void sendGet() throws Exception {
 
                 Scanner kb = new Scanner(System.in);
-                System.out.println("Enter a TUID: ");
+                System.out.print("Enter a TUID: ");
                 int TUID = kb.nextInt();
 		String url = "http://129.32.92.49:8080/xml_lab/getgrade?xml=<tuid>" + TUID + "</tuid>";
 
@@ -63,6 +63,7 @@ public class HttpURLConnectionExample {
                 Document doc = dBuilder.parse(new InputSource(new StringReader(input)));
                 doc.getDocumentElement().normalize();
                 String myGrade = doc.getElementsByTagName("content").item(0).getTextContent();
+                System.out.println(input);
                 System.out.println("Grade: " + myGrade);
 
 	}
